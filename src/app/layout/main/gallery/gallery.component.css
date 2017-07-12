@@ -1,0 +1,17 @@
+.gallery{
+	max-width: 800px;
+}
+.item{
+	margin-bottom: 20px;
+}
+.item img{
+	border: 1px solid #777;
+	margin: 0px;
+}
+.pagination div{
+	display: inline-block;
+	color: #000000;
+}
+.page_num{
+	width: 60px;
+}

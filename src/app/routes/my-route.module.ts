@@ -5,12 +5,13 @@ import { GalleryComponent } from './../layout/main/gallery/gallery.component';
 import { AboutUsComponent } from './../layout/main/about-us/about-us.component';
 import { ContactUsComponent } from './../layout/main/contact-us/contact-us.component';
 import { TaskComponent } from './../layout/main/task/task.component';
+import { GalleryGuard } from './resolver/gallery-guard';
 const appRoutes: Routes = [
-	{ path: 'home', component: LandingPageComponent},
-	{ path: 'aboutus', component: AboutUsComponent},
-	{ path: 'contactus', component: ContactUsComponent},
-	{ path: 'gallery', component: GalleryComponent},
-	{ path: 'task', component: TaskComponent},
+	{ path: 'home', pathMatch: 'full', component: LandingPageComponent},
+	{ path: 'aboutus', pathMatch: 'full', component: AboutUsComponent},
+	{ path: 'contactus', pathMatch: 'full', component: ContactUsComponent},
+	{ path: 'gallery', pathMatch: 'full', component: GalleryComponent, resolve: {guard:GalleryGuard}},
+	{ path: 'task', pathMatch: 'full', component: TaskComponent},
 	{ path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 

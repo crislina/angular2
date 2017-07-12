@@ -1,3 +1,18 @@
-<p>
-  gallery works!
-</p>
+<div class="gallery" class="col-md-12">
+<h1>gallery</h1>
+<div *ngFor="let city of showCities()" class="col-md-4 col-sm-6 col-xs-6 item">
+	<a target="_blank">
+    	<img src="./../../../../assets/images/gallery/{{city.imageUrl}}" alt="{{city.name}}" width="330" height="220">
+	</a>
+  	<div>{{city.desc}}</div>
+  	<div>Cost: {{city.amount}}</div>
+  	<div>Start Date: {{city.date}}</div>
+</div>
+<div class="pagination">
+<button><span class="glyphicon glyphicon-step-backward" (click)="jumpTo(1)" aria-hidden="true"></span></button>
+<button><span class="glyphicon glyphicon-triangle-left" aria-hidden="true" (click)="jumpTo(pageIndex-1)"></span></button>
+<div><input type="text" class="page_num" name="page_num">/{{this.totalPages}}</div>
+<button><span class="glyphicon glyphicon-triangle-right" (click)="jumpTo(pageIndex+1)" aria-hidden="true"></span></button>
+<button><span class="glyphicon glyphicon-step-forward" (click)="jumpTo(totalPages)" aria-hidden="true"></span></button>
+</div>
+</div>
